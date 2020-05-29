@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link href="./index.css" rel="stylesheet" type="text/css" />
+   <title></title>
+</head>
+
+<body>
+   <div class="container">
+      <form action="">
+         <h1>VerT</h1>
+         <div class="input-group">
+            <input type="text" placeholder="Inserte el link/url a abrir..." id="linkPath" />
+            <button type="submit">Ir</button>
+         </div>
+      </form>
+   </div>
+
+   <script>
+      const { ipcRenderer } = require('electron')
+
+      const form = document.querySelector('form')
+      form.addEventListener('submit', submitForm)
+
+      function submitForm(e) {
+         e.preventDefault()
+
+         const link = document.querySelector('#linkPath').value
+         ipcRenderer.send('link:url', link)
+      }
+   </script>
+</body>
+
+</html>

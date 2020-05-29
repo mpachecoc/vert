@@ -1,0 +1,20 @@
+{
+  "name": "vert",
+  "productName": "VerT",
+  "version": "1.0.0",
+  "description": "Small helper window that stays always on top of any other application, so you can work having the window at the right top/bottom corner",
+  "main": "main.js",
+  "scripts": {
+      "start": "electron .",
+      "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=assets/icons/mac/icon.icns --prune=true --out=release-builds",
+      "package-win": "electron-packager . vert --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/icons/win/icon.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"VerT\"",    
+      "package-linux": "electron-packager . vert --overwrite --asar=true --platform=linux --arch=x64 --icon=assets/icons/png/icon.png --prune=true --out=release-builds"
+  },
+  "keywords": [],
+  "author": "Mauricio Pacheco Cardozo <mauriciopachecoc@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+      "electron": "^9.0.0",
+      "electron-packager": "^14.2.1"
+  }
+}
